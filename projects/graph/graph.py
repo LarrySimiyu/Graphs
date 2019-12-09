@@ -35,21 +35,22 @@ class Graph:
         Print each vertex in breadth-first order
         beginning from starting_vertex.
         """
-       #memorize the algorithm holds true for all problems you are going through
-       # create an empty queue and enqueue the starting vertex ID
-       q = Queue()
-       # create an empty Set to store visited vertices 
-       visited = set()
-       # While the queue is not empty...
-       while q.size() > 0:
+        #memorize the algorithm holds true for all problems you are going through
+        # create an empty queue and enqueue the starting vertex ID
+        q = Queue()
+        q.enqueue(starting_vertex)
+        # create an empty Set to store visited vertices 
+        visited = set()
+        # While the queue is not empty...
+        while q.size() > 0:
         # dequeue the first vertext
-        v = q.dequeue()
+            v = q.dequeue()
         # if that vertext has not been visted
         if v not in visited:
              # mark it as visited
-             print(v)
-             visited.add(v)
-             # then addd all of its neighbors to the back of the queue 
+            print(v)
+            visited.add(v)
+            # then addd all of its neighbors to the back of the queue 
             for neighbor in self.vertices[v]:
                 q.enqueue(neighbor)
         q = []
@@ -62,14 +63,24 @@ class Graph:
         Print each vertex in depth-first order
         beginning from starting_vertex.
         """
-       # create an empty stack and push the starting vertex ID
+        # create an empty stack and push the starting vertex ID
+        s = Stack()
+        s.push(starting_vertex)
         # create an empty Set to store visited vertices 
+        visited = set()
         # While the stack is not empty...
+        while s.size() > 0:
             # pop the first vertext
+            v = s.pop()
             # if that vertext has not been visted
+            if v not in visited:
                 # mark it as visited
+                print(v)
+                visited.add(v)
                 # then addd all of its neighbors to the top of the stack
-
+                for neighbor in self.vertices[v]:
+                    s.push(neighbor)
+#1:49:00 explanation
     def dft_recursive(self, starting_vertex):
         """
         Print each vertex in depth-first order
