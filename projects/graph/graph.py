@@ -35,14 +35,40 @@ class Graph:
         Print each vertex in breadth-first order
         beginning from starting_vertex.
         """
-        pass  # TODO
-
+       #memorize the algorithm holds true for all problems you are going through
+       # create an empty queue and enqueue the starting vertex ID
+       q = Queue()
+       # create an empty Set to store visited vertices 
+       visited = set()
+       # While the queue is not empty...
+       while q.size() > 0:
+        # dequeue the first vertext
+        v = q.dequeue()
+        # if that vertext has not been visted
+        if v not in visited:
+             # mark it as visited
+             print(v)
+             visited.add(v)
+             # then addd all of its neighbors to the back of the queue 
+            for neighbor in self.vertices[v]:
+                q.enqueue(neighbor)
+        q = []
+        visited = {1, 2, 3, 4, 7, 6}
+        #first in first out FIFO
+        
+        1, 2, 3, 4, 5, 7, 6
     def dft(self, starting_vertex):
         """
         Print each vertex in depth-first order
         beginning from starting_vertex.
         """
-        pass  # TODO
+       # create an empty stack and push the starting vertex ID
+        # create an empty Set to store visited vertices 
+        # While the stack is not empty...
+            # pop the first vertext
+            # if that vertext has not been visted
+                # mark it as visited
+                # then addd all of its neighbors to the top of the stack
 
     def dft_recursive(self, starting_vertex):
         """
