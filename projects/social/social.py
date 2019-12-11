@@ -53,6 +53,7 @@ class SocialGraph:
             self.add_user(f"User {i+1}")
 
         # Create friendships
+        
         # total_friendships = 
 
         # Create a list with all possible friendship combinations,
